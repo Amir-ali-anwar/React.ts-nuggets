@@ -1,4 +1,9 @@
-type IconSize = "sm" | "xs" | Omit<string, "sm" | "xs">;
+// First method
+// type IconSize = "sm" | "xs" | Omit<string, "sm" | "xs">;
+//2nd method
+type IconSize = LooseAutoComplete<"sm" | "xs"> ;
+
+type LooseAutoComplete<T extends string>= T| Omit<string, T>
 interface IconProps {
   size: IconSize;
 }
