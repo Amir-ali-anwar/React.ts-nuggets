@@ -1,6 +1,7 @@
 type Props = {
   name: string;
 } & (MaleProps | FemaleProps);
+
 type MaleProps = {
   gender: "male";
   salary: number;
@@ -9,7 +10,8 @@ type FemaleProps = {
   gender: "female";
   weight: number;
 };
-const Child = ({ name }: Props) => {
+const Child = (Props:Props) => {
+  const {name}= Props
   return (
     <div>
       <h1>{name}</h1>
